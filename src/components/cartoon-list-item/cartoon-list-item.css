@@ -1,0 +1,30 @@
+.cartoon-list-item {
+    display: flex;
+    margin: 15px 0;
+}
+
+.cartoon-list-item .cartoon-cover {
+    flex-shrink: 0;
+    width: 120px;
+    margin-right: 30px;
+}
+
+.cartoon-list-item .cartoon-cover img {
+    max-width: 100%;
+}
+
+.cartoon-list-item .cartoon-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    align-items: flex-start;
+}
+
+.cartoon-list-item .cartoon-details .cartoon-title {
+    font-size: 1.2rem;
+}
+
+.cartoon-list-item .cartoon-details .cartoon-price {
+    font-size: 1.4rem;
+}

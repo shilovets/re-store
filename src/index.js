@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {BrowserRouter} from "react-router-dom";
+
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from "./components/app";
+import ErrorBoundry from "./components/error-boundry";
+import CartoonstoreService from './services/cartoonstore-service';
+import {CartoonstoreServiceProvider} from "./components/cartoonstore-service-contex/cartoonstore-service-contex";
+import store from './store/store';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const cartoonstoreService  = new CartoonstoreService();
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ErrorBoundry>
+            <CartoonstoreServiceProvider value={cartoonstoreService}>
+                <BrowserRouter>
+                    <App/>
+                </BrowserRouter>
+            </CartoonstoreServiceProvider>
+        </ErrorBoundry>
+    </Provider>
+, document.getElementById('root'));

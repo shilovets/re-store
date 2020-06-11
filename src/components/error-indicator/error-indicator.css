@@ -1,0 +1,11 @@
+.error-indicator{
+    display: inline-block;
+}
+
+.error-indicator h1{
+    font-weight: 700;
+}
+
+.error-indicator img{
+    width: 300px;
+}
